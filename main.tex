@@ -1,0 +1,186 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Classicthesis Typographic Thesis
+% LaTeX Template
+% Version 1.1 (4/8/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% André Miede (http://www.miede.de)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% General Tips:
+% 1) Make sure to edit the classicthesis-config.file
+% 2) New enumeration (A., B., C., etc in small caps): \begin{aenumerate} \end{aenumerate}
+% 3) For margin notes: \marginpar or \graffito{}
+% 4) Do not use bold fonts in this style, it is designed around them
+% 5) Use tables as in the examples
+% 6) See classicthesis-preamble.sty for useful commands
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+		twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,
+                footinclude=true,cleardoublepage=empty,
+                BCOR=5mm,paper=a4,fontsize=11pt, % Binding correction, paper type and font size
+                spanish% Languages
+                ]{scrreprt} 
+                
+% Includes the file which contains all the document configurations and packages - make sure to edit this file
+\input{classicthesis-config}
+
+\begin{document}
+
+\frenchspacing % Reduces space after periods to make text more compact
+
+\raggedbottom % Makes all pages the height of the text on that page
+
+\selectlanguage{spanish} % Select your default language - e.g. american or ngerman
+
+%\renewcommand*{\bibname}{new name} % Uncomment to change the name of the bibliography
+%\setbibpreamble{} % Uncomment to include a preamble to the bibliography - some text before the reference list starts
+
+\pagenumbering{roman} % Roman page numbering prior to the start of the thesis content (i, ii, iii, etc)
+
+\pagestyle{plain} % Suppress headers for the pre-content pages
+
+%----------------------------------------------------------------------------------------
+%	PRE-CONTENT THESIS PAGES
+%----------------------------------------------------------------------------------------
+
+\include{FrontBackMatter/Titlepage} % Main title page
+
+\include{FrontBackMatter/Titleback} % Back of the title page
+
+\cleardoublepage\include{FrontBackMatter/Dedication} % Dedication page
+
+%\cleardoublepage\include{FrontBackMatter/Foreword} % Uncomment and create a Foreword.tex to include a foreword
+
+\cleardoublepage\include{FrontBackMatter/Abstract} % Abstract page
+
+%\cleardoublepage\include{FrontBackMatter/Publication} % Publications from the thesis page
+
+\cleardoublepage\include{FrontBackMatter/Acknowledgments} % Acknowledgements page
+
+\pagestyle{scrheadings} % Show chapter titles as headings
+
+\cleardoublepage\include{FrontBackMatter/Contents} % Contents, list of figures/tables/listings and acronyms
+
+\pagenumbering{arabic} % Arabic page numbering for thesis content (1, 2, 3, etc)
+%\setcounter{page}{90} % Uncomment to manually start the page counter at an arbitrary value (for example if you wish to count the pre-content pages in the page count)
+
+\cleardoublepage % Avoids problems with pdfbookmark
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS - SAMPLE
+%----------------------------------------------------------------------------------------
+
+%\ctparttext{You can put some informational part preamble text here. Illo principalmente su nos. Non message \emph{occidental} angloromanic da. Debitas effortio simplificate sia se, auxiliar summarios da que, se avantiate publicationes via. Pan in terra summarios, capital interlingua se que. Al via multo esser specimen, campo responder que da. Le usate medical addresses pro, europa origine sanctificate nos se.} % Text on the Part 1 page describing  the content in Part 1
+%
+%\part{Some Kind of Manual} % First part of the thesis
+%
+%\include{Chapters/Chapter01} % Chapter 1
+%
+%\cleardoublepage % Empty page before the start of the next part
+
+%------------------------------------------------
+
+\ctparttext{Ahora es común estar en contacto con algún dispositivo con alta capacidad de computo, mas aun, estos dispositivos pueden ser móviles (\ie smartphones, tablets) y contar con una gran variedad de sensores y actuadores. Estos artefactos tienen la capacidad de aumentar las formas de interacción entre el usuario y el software. Por ejemplo, podria accederse a los motores de vibración y utilizarlo para brindar feedback que estimule el sentido del tacto, junto a una señal auditiva, afectando de esta forma, a mas de un sentido. 
+
+Otros dispositivos pueden agregar periféricos con hardware y software especifico, como el detector de gestos Leap Motion o incluso algún diseño a medida montado sobre placas similares a Arduino o Rapsberry Pi, sólo por mencionar algunas posibilidades. Quedan abiertos nuevos modos de interacción con el software que incluso pueden ser empleados de manera simultanea, dando lugar a interfaces multimodales.
+%Por otra parte, los dispositivos que no posean estos sensores/actuadores, pueden utilizar hardware extra, como puede ser un dispositivo Leap Motion o algun diseño a medida montado sobre una placa Arduino, por mencionar un par de ejemplos. 
+
+A continuación se describe el estado del arte actual en aplicaciones multimodales. Específicamente, se distinguirá qué clase de soporte se brinda para el desarrollo de este tipo de aplicaciones, si esta orientado a generar aplicaciones de propósito general o particular y si intenta cubrir todo el espectro de modalidades o se concentra solo en un conjunto limitado de ellas.}
+
+%El objetivo de este capitulo es acercar al lector al panorama actual del soporte para el desarrollo de aplicaciones multimodales. 
+
+\part{Introducción} % Primera parte
+
+\include{Chapters/Chapter01_EstadoDelArte} % Chapter 1
+
+\cleardoublepage % Empty page before the start of the next part
+
+%------------------------------------------------
+
+\ctparttext{A continuación se exponen las características del medio al cual se agregará el soporte para las diferentes modalidades. Luego se esgrimirán los aspectos particulares que esta arquitectura propone y su relación con otras alternativas clásicas.
+En este trabajo, el ``medio'' es la Web como plataforma. Sobre la misma se construye la solución aquí propuesta; es entonces importante conocer las condiciones que este medio impone para comprender mejor la plataforma. 
+Al proponer una solución novedosa en determinados aspectos, fue necesario primero buscar algunos puntos de comparación en el desarrollo de plataformas multimodales. A continuación se analizan y comparan la arquitectura de plusultra con los trabajo de Dumas y la W3C.} 
+
+\part{Aspectos Técnicos} % Segunda Parte
+
+\include{Chapters/Chapter02_Infra} % Chapter 2
+
+\cleardoublepage % Empty page before the start of the next part
+
+\include{Chapters/Chapter03_Enlace} % Chapter 3
+
+\cleardoublepage % Empty page before the start of the next part
+
+
+%------------------------------------------------
+
+\ctparttext{En esta parte se verá como funcionan los conceptos introducidos en el ámbito de una aplicación web. Se mostrará también el desarrollo de una aplicación web multimodal usando la plataforma para concretar una validación por implementación.}
+
+\part{Desarrollo de una aplicación multimodal}
+
+\include{Chapters/Chapter04_RIA} % Chapter 4
+
+\include{Chapters/Chapter05_DEMO} % Chapter 5
+
+\cleardoublepage % Empty page before the start of the next part
+
+%------------------------------------------------
+
+\ctparttext{El desarrollo de aplicaciones multimodales parece ser el camino a seguir por una parte de la industria. Esto se refleja en el avance en los dispositivos móviles y en diversos proyectos de hardware abierto los cuales ``oxigenan'' las vias de comunicación aun mas. Profundizar y mantener en orbita estos conceptos se vuelve entonces una estrategia adecuada.} 
+
+\part{Conclusiones y trabajo futuro}
+
+\include{Chapters/Chapter06_END}
+
+\cleardoublepage % Empty page before the start of the next part
+
+%------------------------------------------------
+
+%\ctparttext{A continuación se exponen las características del medio al cual se agregará el soporte para las diferentes modalidades. Luego se esgrimirán los aspectos particulares que esta arquitectura propone y su relación con otras alternativas clásicas.} 
+
+
+%\include{Chapters/Chapter03_Enlace} % Chapter 3
+
+%\cleardoublepage % Empty page before the start of the next part
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix
+
+\ctparttext{Hasta ahora hemos visto una serie de componentes, que agrupados, son capaces de dar soporte a interacciones multimodales en aplicaciones web. Pero nada se ha especificado sobre alguna modalidad concreta. Aquí se introducirá un primer acercamiento a dos modalidades, para las cuales se han desarrollado sus correspondientes drivers. Se trata de las modalidades háptica y aéreo-gestual.} 
+
+\part{Apéndice} % New part of the thesis for the appendix
+\include{Chapters/Chapter0A_Haptica} % Modalidad háptica
+\include{Chapters/Chapter0B_Aero} % Modalidad gestual
+
+%\include{Chapters/Chapter0B} % Appendix B - empty template
+
+%----------------------------------------------------------------------------------------
+%	POST-CONTENT THESIS PAGES
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage\include{FrontBackMatter/ListOfFigures} % Bibliography
+
+\cleardoublepage\include{FrontBackMatter/Bibliography} % Bibliography
+
+\cleardoublepage\include{FrontBackMatter/Colophon} % Colophon
+
+\cleardoublepage\include{FrontBackMatter/Declaration} % Declaration
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

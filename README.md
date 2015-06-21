@@ -8,4 +8,4 @@ El trabajo se presenta dentro del marco de una investigación aplicada, pero se 
 Diego I. Paez
 
 ## Licencia
-`BY-NC-SA` [Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/https://creativecommons.org/licenses/by-nc-sa/4.0/)
+`BY-NC-SA` [Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/)

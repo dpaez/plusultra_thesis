@@ -6,7 +6,7 @@
 
 %----------------------------------------------------------------------------------------
 
-% ### Introducción de capitulo
+% ### Introducción de capítulo
 
  
 
@@ -15,7 +15,7 @@
 A grandes rasgos, los puntos de entrada a la plataforma \emph{Plusultra} introducida en el capítulo anterior, estarán ubicados en dos lugares diferentes:
 
 \begin{itemize}
-\item \textbf{Clientes Web}; aquí también reside la lógica de la aplicación. En conjunto crean una experiencia multimodal en la web. Dentro de los clientes web, podemos encontrar capacidades extra que pueden ser usadas a su vez como modalidades (\ie ~un cliente corriendo en un smartphone puede tener acceso a sensores, que a su vez, pueden ser usados como reconocedores). Mas adelante en este capitulo, se analizará esta situación.
+\item \textbf{Clientes Web}; aquí también reside la lógica de la aplicación. En conjunto crean una experiencia multimodal en la web. Dentro de los clientes web, podemos encontrar capacidades extra que pueden ser usadas a su vez como modalidades (\ie ~un cliente corriendo en un smartphone puede tener acceso a sensores, que a su vez, pueden ser usados como reconocedores). Mas adelante en este capítulo, se analizará esta situación.
 \item \textbf{Dispositivos de modalidad}; se refiere a todos aquellos dispositivos especialmente dedicados a reconocer o sintetizar una modalidad, \eg~ Falcon de Novint o Leap Motion, por mencionar algunos.
 \end{itemize}
 
@@ -26,18 +26,18 @@ En el mismo se describe los mensajes utilizados para un enlace efectivo con la p
 \subsection{Modulo Híbrido Cliente/Servidor}
 Prácticamente todo el desarrollo de este trabajo se ha llevado a cabo utilizando el lenguaje JavaScript. Dado que se busca expandir la capacidad actual de comunicación de las aplicaciones web, es lógico basar la mayor parte de la base de código en dicho lenguaje. Usando la plataforma Node.js, es posible correr JavaScript del lado del servidor también, haciéndolo ubicuo en múltiples escenarios. Teniendo en cuenta estas capacidades, se decidió desarrollar un modulo que pueda aprovechar estos aspectos y ser de utilidad en diversas circunstancias o casos de uso.
  
-De esta forma se introduce el módulo \emph{Gyes}. A través de este componente es posible conectarse al sistema, transmitir datos de modalidades, crear nuevas modalides, crear interpretaciones, capturar salidas del sistema de fisión; por nombrar los casos mas importantes. 
+De esta forma se introduce el módulo \emph{Gyes}. A través de este componente es posible conectarse al sistema, transmitir datos de modalidades, crear nuevas modalidades, crear interpretaciones, capturar salidas del sistema de fisión; por nombrar los casos mas importantes. 
 
 \subsection{Vista General}
 %Grafico que muestre los componentes introducidos antes y las nuevas interfaces.
-El modulo \emph{Gyes} permite realizar diferentes tareas, las cuales tienen como finalidad interactuar con la plataforma \emph{plusultra} y por consiguiente con el resto de los actores de la aplicación, es decir, con el contexto entero de la aplicación web.
+El modulo \emph{Gyes} permite realizar diferentes tareas, las cuales tienen como finalidad interactuar con la plataforma \emph{Plusultra} y por consiguiente con el resto de los actores de la aplicación, es decir, con el contexto entero de la aplicación web.
 El siguiente gráfico \ref{fig:arq_ours_gyes_action} simplifica una de las principales actividades, utilizar una modalidad como reconocedora de algún tipo de señal para luego propagarla en la aplicación, mediante la plataforma. 
 
 % FIGURA DE GYES en accion
 \begin{center}
   \begin{figure}[h]
     \includegraphics[scale=0.7]{gfx/gyes_action}
-    \caption{Modulo gyes en acción: transmitiendo señales}
+    \caption{Modulo Gyes en acción: transmitiendo señales}
     \label{fig:arq_ours_gyes_action}
   \end{figure}
 \end{center}

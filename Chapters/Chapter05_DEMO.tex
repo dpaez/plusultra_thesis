@@ -11,20 +11,20 @@ La aplicación web introducida en este capítulo tiene el objeto de actuar como 
 \section{Introducción} \label{sec:demo_intro}
 Dentro del ámbito de una aplicación web, numerosos eventos pueden ocurrir, algunos generados por el usuario otros por la lógica de la aplicación (tanto cliente como servidor). Estos eventos generan en la mayoría de los casos que se dispare una acción y son usualmente acompañados por una animación a modo de feedback visual para darle fuerza al foco de la acción, ayudando a que el usuario mantenga en todo momento una ``imagen'' clara del estado del sistema, \ie~ que el usuario sepa qué ha ocurrido y que está ocurriendo. Pero esta no es la única forma de indicarle y/o darle mas feedback al usuario, existen diferentes vías de comunicación que pueden ser utilizadas con el simple e importante objetivo de brindar mas información y contexto \Eg~ un estado de error es comúnmente transmitido usando el color rojo; es posible agregar otro canal y estimular otro sensor, como puede ser la piel a través de una corta y clara vibración (similar a la que estamos recibimos de los smartphones), logrando así enriquecer la comunicación, cargando la autopista de información usuario-computador.
 
-A través del uso de la plataforma \emph{plusultra} añadiremos un conjunto de nuevas modalidades al sistema, que generaran nuevos y definidos eventos para que puedan ser capturados dentro del ambiente de una aplicación web. Los usuarios de la misma se beneficiaran de estas nuevas capacidades de interacción, enriqueciendo así a una simple aplicación desarrollada a modo de probar las ventajas que provee el uso de la plataforma.
+A través del uso de la plataforma \emph{Plusultra} añadiremos un conjunto de nuevas modalidades al sistema, que generaran nuevos y definidos eventos para que puedan ser capturados dentro del ambiente de una aplicación web. Los usuarios de la misma se beneficiaran de estas nuevas capacidades de interacción, enriqueciendo así a una simple aplicación desarrollada a modo de probar las ventajas que provee el uso de la plataforma.
 
 \subsection{Objetivo}
-Desarrollar una aplicación web rica, utilizando un conjunto de dependencias acotado con el fin de hacer énfasis en el uso de la plataforma \emph{plusultra} y en el agregado de nuevas modalidades dentro de la aplicación.
+Desarrollar una aplicación web rica, utilizando un conjunto de dependencias acotado con el fin de hacer énfasis en el uso de la plataforma \emph{Plusultra} y en el agregado de nuevas modalidades dentro de la aplicación.
 
-La aplicación, si bien es de alcance limitado por ser una demostración, tiene el objeto de funcionar dentro del área de entretenimiento. Representa al clásico juego de niños de ``formas'', donde se busca estimular el reconocimiento y matcheo de patrones. Al hacer encajar las piezas en su lugar, se consigue una retroalimentación que puede verse incluso acompañado de estímulos externos (por parte de los padres, por ejemplo), premiando el éxito, es decir, esta acción de encastrar una pieza en su lugar; todo esto derivando en el conocimiento (y/o refuerzo) de nuevas formas para el niño.
+La aplicación, si bien es de alcance limitado por ser una demostración, tiene el objeto de funcionar dentro del área de entretenimiento. Representa al clásico juego de niños de ``formas'', donde se busca estimular el reconocimiento de patrones. Al hacer encajar las piezas en su lugar, se consigue una retroalimentación que puede verse incluso acompañado de estímulos externos (por parte de los padres, por ejemplo), premiando el éxito, es decir, esta acción de encastrar una pieza en su lugar; todo esto derivando en el conocimiento (y/o refuerzo) de nuevas formas para el niño.
 
-Aquí se traslada este juego a una versión digital del mismo. A través del uso de la plataforma \emph{plusultra} y un conjunto acotado de modalidades, se extenderán las capacidades de interacción con el fin de generar mas estímulos en el usuario y así incrementar el \emph{feedback} total de la aplicación. 
+Aquí se traslada este juego a una versión digital del mismo. A través del uso de la plataforma \emph{Plusultra} y un conjunto acotado de modalidades, se extenderán las capacidades de interacción con el fin de generar mas estímulos en el usuario y así incrementar el \emph{feedback} total de la aplicación. 
 
 \subsection{Requerimientos}
 Mas allá de los requerimientos iniciales para desarrollar cualquier aplicación, la creación de una aplicación multimodal implica conocer cuáles son y cómo operan los dispositivos de modalidad que vayan a ser usados. 
 
 Para el desarrollo puntual de esta aplicación fueron creados dos \emph{drivers} de modalidad para conectar dos nuevas modalidades, una háptica y otra aero-gestual. 
-Estos controladores ofrecen un conjunto de eventos y en algunos casos abren un camino bi-direccional entre modalidad y aplicación, es decir, permiten la modificación de parámetros de modalidad en tiempo real. 
+Estos controladores ofrecen un conjunto de eventos y en algunos casos abren un camino bidireccional entre modalidad y aplicación, es decir, permiten la modificación de parámetros de modalidad en tiempo real. 
 
 Mas adelante se muestran los principales detalles para la creación de un driver de modalidad genérico. 
 
@@ -40,7 +40,7 @@ A continuación se describen los principales módulos que componen a la aplicaci
 
 \item \texttt{interactive.js}; se encarga de administrar de manera uniforme los eventos de drag \& drop que ocurran en la aplicación.
 
-\item \texttt{gyes.js}; es el módulo cliente oficial para conectarse con la plataforma \emph{plusultra}. Luego de obtener la llave de acceso a la plataforma, el desarrollador puede comenzar a utilizar un determinado número de instancias de la plataforma. El módulo brinda los principales eventos a los cuales la aplicación puede conectarse y actuar.
+\item \texttt{gyes.js}; es el módulo cliente oficial para conectarse con \emph{Plusultra}. Luego de obtener la llave de acceso a la plataforma, el desarrollador puede comenzar a utilizar un determinado número de instancias de la plataforma. El módulo brinda los principales eventos a los cuales la aplicación puede conectarse y actuar.
 
 \item \texttt{HapticMD}; representa al controlador de modalidad háptico. El mismo esta desarrollado para aprovechar las capacidades de los dispositivos móviles modernos en el ámbito de una aplicación web rica. Provee eventos para definir interacción de entrada a través de gestos táctiles y de salida, a través de feedback vibro-táctiles.
 
@@ -61,7 +61,7 @@ En la siguiente figura \ref{fig:demo_shapes_app}, se pueden observar a simple vi
 Los módulos desarrollados para esta aplicación se realizaron usando el patrón \emph{module}, como puede verse en \citet{demo:module_pattern}. A través del uso del mismo se consigue una división de responsabilidades y conocimiento, distinguiendo partes publicas (API) de privadas (implementación). Además permite aplicar una simple pero solida capacidad de manejo de dependencias internas. 
 
 \subsection{Conectando a la Plataforma}
-Con el fin de extender el conjunto de modalidades de una aplicación web, se propone la utilización de la plataforma \emph{plusultra}. La misma provee un servicio, en tiempo-real, de comunicación con dispositivos de modalidad. En el caso concreto de la aplicación \texttt{Shapes}, se han utilizado dos dispositivos de modalidad, el Leap Motion y los controladores táctiles de los dispositivos móviles. Agregar estas nuevas modalidades aumenta la capacidad de interacción con la aplicación desarrollada. Estas nuevas capacidades pueden ser aprovechadas por el desarrollador de la aplicación web mediante el consumo de los eventos que las mismas generan y que son transmitidos mediante la plataforma. 
+Con el fin de extender el conjunto de modalidades de una aplicación web, se propone la utilización de \emph{Plusultra}. La misma provee un servicio, en tiempo-real, de comunicación con dispositivos de modalidad. En el caso concreto de la aplicación \texttt{Shapes}, se han utilizado dos dispositivos de modalidad, el Leap Motion y los controladores táctiles de los dispositivos móviles. Agregar estas nuevas modalidades aumenta la capacidad de interacción con la aplicación desarrollada. Estas nuevas capacidades pueden ser aprovechadas por el desarrollador de la aplicación web mediante el consumo de los eventos que las mismas generan y que son transmitidos mediante la plataforma. 
 
 En la figura \ref{fig:demo_shapes_app_arq} puede verse la relación entre los componentes arquitectonicos de la aplicación desarrollada:
 
@@ -77,9 +77,9 @@ En la figura \ref{fig:demo_shapes_app_arq} puede verse la relación entre los co
 
 Para conectarse con la plataforma desde el contexto de una aplicación web el desarrollador debe incluir como una dependencia JavaScript, a su entorno de desarrollo, al módulo \texttt{gyes}. Este módulo brinda una interfaz de acceso a la plataforma.
 
-Para conectarse es necesario contar con una llave de acceso y ejecutar el llamado a conexión usando el método \texttt{authenticate}. Este sistema de autenticación es simple y busca emular un escenario ``real''; debería ser mejorado acorde antes de ser llevado a un entorno de producción.
+Para conectarse es necesario contar con una llave de acceso y ejecutar el llamado a conexión usando el método \texttt{authenticate}. Este sistema de autenticación es simple y busca emular un escenario ``real''; debería ser mejorado de forma acorde antes de ser llevado a un entorno de producción.
 
-Luego de la autenticación el desarrollador puede comenzar a utilizar los drivers de modalidad que considere necesarios. Para esta aplicación se utilizan, un driver aero-gestual, denominado \emph{AirPointerMD} y otro, \emph{HapticMD}, usado como controlador háptico. A través del módulo \texttt{gyes} el desarrollador instancia las modalidades dentro de la aplicación web, por ejemplo:
+Luego de la autenticación a la plataforma, el desarrollador puede comenzar a utilizar los drivers de modalidad que considere necesarios. Para esta aplicación se utilizan, un driver aero-gestual, denominado \emph{AirPointerMD} y otro, \emph{HapticMD}, usado como controlador háptico. A través del módulo \texttt{gyes} el desarrollador instancia las modalidades dentro de la aplicación web, por ejemplo:
 
 \begin{lstlisting}
     // Construye una nueva modalidad háptica
@@ -137,12 +137,12 @@ El sistema de fisión, permite conectar una función para que sea llamada de man
     });
 \end{lstlisting}
 
-De esta forma se han mostrado los principales puntos de conexión necesarios para utilizar la plataforma \emph{plusultra} en su primera versión.
+De esta forma se han mostrado los principales puntos de conexión necesarios para utilizar la plataforma \emph{Plusultra} en su primera versión.
 
 \section{Construcción de un Driver de Modalidad}
-Para el desarrollo de una aplicación web multimodal es necesario contar con drivers o controladores que den soporte a los dispositivos de modalidad que vayan a ser usados. La plataforma \emph{plusultra} es agnóstica respecto al dispositivo de modalidad usado, brindando a través del módulo \emph{gyes} una interfaz para conectar un nuevo dispositivo al sistema. Un posible trabajo a futuro y aporte a la plataforma sería la creación de un catálogo online de todos los drivers de modalidad disponibles. 
+Para el desarrollo de una aplicación web multimodal es necesario contar con drivers o controladores que den soporte a los dispositivos de modalidad que vayan a ser usados. La plataforma \emph{Plusultra} es agnóstica respecto al dispositivo de modalidad usado, brindando a través del módulo \emph{gyes} una interfaz para conectar un nuevo dispositivo al sistema. Un posible trabajo a futuro y aporte a la plataforma sería la creación de un catálogo online de todos los drivers de modalidad disponibles.
 
-El desarrollo de un nuevo driver de modalidad es una tarea relativamente simple, aunque esto puede variar entre dispositivos. El módulo \emph{gyes} provee una interfaz para la creación de drivers en JavaScript, aunque es posible desarrollar un driver en otro lenguaje, simplemente siguiendo el protocolo provisto por la plataforma \emph{plusultra}.
+El desarrollo de un nuevo driver de modalidad es una tarea relativamente simple, aunque esto puede variar entre dispositivos. El módulo \emph{gyes} provee una interfaz para la creación de drivers en JavaScript, aunque es posible desarrollar un driver en otro lenguaje, simplemente siguiendo el protocolo (ver sub-sección protocolo \ref{subsection:protocol}), provisto por \emph{Plusultra}.
 A continuación se muestran los principales métodos a implementar para crear un driver de modalidad, la conexión del mismo a la plataforma se definió anteriormente.
 
 \begin{lstlisting}
@@ -169,6 +169,6 @@ De esta forma es posible crear un nuevo driver para conectar un nuevo dispositiv
 Esto permite pensar en la posibilidad de contar con un catalogo de drivers de la plataforma.
 
 \section{Resumen del Capítulo}
-El principal objetivo de la plataforma \emph{plusultra} es agrandar de manera uniforme el conjunto de modalidades que soportan actualmente las aplicaciones web. Este conjunto  es muy limitado, concentrado en las principales formas de comunicación con el ordenador, como lo son el mouse, el teclado y el feedback visual. En muy pocos casos una aplicación web va mas allá de eso y la principal razón puede estar ubicada en las dificultades propias de la tarea junto a la falta de información al respecto. Yendo un poco mas allá, imaginar el soporte a mas de una modalidad al mismo tiempo, parece difícil de visualizar y por ende de llevar a cabo.
+El principal objetivo de la plataforma \emph{Plusultra} es agrandar de manera uniforme el conjunto de modalidades que soportan actualmente las aplicaciones web. Este conjunto  es muy limitado, concentrado en las principales formas de comunicación con el ordenador, como lo son el mouse, el teclado y el feedback visual. En muy pocos casos una aplicación web va mas allá de eso y la principal razón puede estar ubicada en las dificultades propias de la tarea junto a la falta de información al respecto. Yendo un poco mas allá, imaginar el soporte a mas de una modalidad al mismo tiempo, parece difícil de visualizar y por ende de llevar a cabo.
 
 Superar estas cuestiones fueron las premisas constantes durante el desarrollo de la plataforma y a través de la construcción de la aplicación ejemplo \texttt{Shapes} se mostró como es posible crear una aplicación web multimodal con un conjunto acotado y mínimo de  dependencias externas. Si bien existen cuestiones a mejorar, como la simplificación de la API del módulo \texttt{gyes} o las mejoras en el sistema de autenticación con la plataforma, la solución aquí propuesta ha funcionado como un recurso exitoso y concreto al problema de desarrollar una aplicación web multimodal.

@@ -5,17 +5,19 @@
 \label{ch:ria_extension} 
 
 % ### Introducción de capítulo
-El concepto, para una aplicación web como las que aquí se referencian, es el de \emph{Rich Internet Application} (RIA para resumir), estas aplicaciones poseen un conjunto de características que las distinguen de los ''sitios web'' o ''paginas web'' y de las aplicaciones de escritorio. 
+El concepto, para una aplicación web como las que aquí se referencian, es el de \emph{Rich Internet Application} (RIA para resumir), estas aplicaciones poseen un conjunto de características que las distinguen de los ``sitios web'' o ``paginas web'' y de las aplicaciones de escritorio. 
 
 La industria ha evolucionado en los últimos años hacia aplicaciones que pueden catalogarse como RIA's; aplicaciones web con una gran cantidad de lógica de negocio del lado del cliente y con alta atención en la experiencia del usuario. Algunos ejemplos son, Facebook, Gmail, Twitter, dentro del aplicaciones sociales; Rdio, Beats, como aplicaciones multimedia; BBC y NYTimes entre aplicaciones informativas. Estas compañías han impulsado diferentes técnicas y herramientas para el desarrollo de aplicaciones web modernas. 
 
-Esta información será usada en este capítulo como contexto para entender como encaja la plataforma propuesta con las aplicaciones web contemporáneas.
+Esta información será usada en este capítulo como contexto para entender la forma de encastrar la plataforma propuesta con las aplicaciones web contemporáneas.
 
 \section{Aplicaciones RIA} \label{sec:extension_ria_intro}
 
-Las denominadas \emph{aplicaciones web ricas} o RIA's se ubican, en una posible linea de tiempo histórica, como paso siguiente a los sitios web o paginas web pertenecientes a la ''web 1.0''. Son parte del cambio que implicó la ''web 2.0'' y fueron evolucionando buscando algunos objetivos determinados que esta tendencia demandaba y que las distinguía de las aplicaciones web pertenecientes a la era ''1.0'', según \citet{Farrell2007}. En este marco histórico el desarrollo busca centrarse en el usuario a través de la creación de experiencias e interacción mas ricas. La arquitectura de las aplicaciones web 1.0 estaba demasiado limitada por el paradigma cliente-servidor, donde el cliente era un simple consumidor de cada pagina que el servidor le generaba, esto presenta un sincronismo duro y por lo tanto degrada fuertemente las capacidades de interacción.
+Las denominadas \emph{aplicaciones web ricas} o RIA's se ubican, en una posible linea de tiempo histórica, como paso siguiente a los sitios web o paginas web pertenecientes a la \emph{web 1.0}. Son parte del cambio que implicó a la denominada \emph{web 2.0} y fueron evolucionando buscando algunos objetivos determinados que esta tendencia demandaba y que las distinguía de las aplicaciones web pertenecientes a la era ``1.0'', según \citet{Farrell2007}. 
 
-En \citet{Duhl2003}, se definen los siguientes problemas tradicionales de las aplicaciones web pertenecientes a la época ''1.0'':
+En este marco histórico, el desarrollo busca centrarse en el usuario a través de la creación de experiencias e interacción mas ricas. La arquitectura de las aplicaciones \emph{web 1.0} estaba demasiado limitada por el paradigma cliente-servidor, donde el cliente era un simple consumidor de cada pagina de hipertexto que el servidor le generaba, esto presenta un sincronismo duro que afectaba fuertemente las capacidades de interacción.
+
+En \citet{Duhl2003}, se definen los siguientes problemas tradicionales de las aplicaciones web pertenecientes a la época ``1.0'':
 \begin{itemize}
 \item Procesos complejos.
 \item Dificultad en en el acceso y tratamiento de datos (ausencia de capacidades exploratorias).
@@ -28,8 +30,8 @@ De acuerdo a  \citet{Fraternali2010}, las aplicaciones RIA representan una soluc
 \item Esquema de lógica de negocios distribuida entre cliente servidor, con la posibilidad de balancear la carga completamente servidor, completamente cliente o mixto.
 \item Igualdad en la capacidad de iniciar la conversación, tanto por parte del cliente como del servidor.
 \end{itemize}
-Estas capacidades permiten enriquecer la experiencia de uso de la aplicación web, haciéndola similar o incluso mejor que la contra-parte de escritorio. Particularmente, se destaca las mejoras que generan las RIA sobre el ultimo punto, el feedback. Estas aplicaciones se basan en el asincronismo en la carga y actualización de componentes, permitiendo asi ''independizarlos'' en la información que representan, aunque siendo partes de un aplicativo superior. Por ejemplo, esto puede notarse en cualquier aplicación web que permita elegir qué elementos cargar de una lista sin refrescar toda la página y a la vez permitiendo interactuar con este, recientemente agregado, componente. Este estilo de aplicación es conocido como \emph{single page application} o aplicación de una sola pagina.
-Finalmente, es menester tener en cuenta que las características previamente listadas han mejorado notablemente en los últimos años con el nuevo estándar HTML5 que no representa una tecnología particular si no mas bien un conjunto de tecnologías (CSS, HTML y JS) que representan progresos importantes en la presentación, estructura y lógica del lado cliente.
+Estas capacidades permiten enriquecer la experiencia de uso de la aplicación web, haciéndola similar o incluso mejor que la contra-parte de escritorio. Particularmente, se destaca las mejoras que generan las RIA sobre el ultimo punto, el feedback. Estas aplicaciones se basan en el asincronismo en la carga y actualización de componentes, permitiendo asi ``independizarlos'' en la información que representan, aunque siendo partes de un aplicativo superior. Por ejemplo, esto puede notarse en cualquier aplicación web que permita elegir qué elementos cargar de una lista sin refrescar toda la página y a la vez permitiendo interactuar con este, recientemente agregado, componente. Este estilo de aplicación es conocido como \emph{Single Page Application} (SPA) o aplicación de una sola pagina.
+Finalmente, es menester tener en cuenta que las características previamente listadas han mejorado notablemente en los últimos años. Un ejemplo de esto es el nuevo estándar HTML5, que no representa una tecnología particular si no mas bien un conjunto de tecnologías (CSS, HTML y JS). Estas herramientas en conjunto dan muestra de progresos importantes en la presentación, estructura y lógica de la aplicación web que se va a ejecutar del lado del cliente.
 
 \section{Conexión con RIA} \label{sec:extension_ria_conexion}
 
@@ -63,7 +65,7 @@ Si bien no es el objetivo principal del presente trabajo explayarse sobre una me
 
 \section{Aplicaciones Web en la Industria} \label{sec:extension_industria_intro}
 
-La industria ha sido participe en la mencionada ''revolución 2.0''. Negocios como \emph{amazon} crecen considerablemente en esta época y generan necesidades nuevas, lo que motiva a la competencia a imitarlas o superarlas. Con el objetivo de mejorar cualitativamente la aplicaciones desarrolladas y las nuevas, la industria comenzo a generar sus propias herramientas, muchas de ellas \emph{open source}, lo que permitió que otros las usaran, mejorando la calidad general del ecosistema.
+La industria ha sido participe en la mencionada ``revolución 2.0''. Negocios como \emph{amazon} crecen considerablemente en esta época y generan necesidades nuevas, lo que motiva a la competencia a imitarlas o superarlas. Con el objetivo de mejorar cualitativamente la aplicaciones desarrolladas y las nuevas, la industria comenzo a generar sus propias herramientas, muchas de ellas \emph{open source}, lo que permitió que otros las usaran, mejorando la calidad general del ecosistema.
 
 Así es como surgen librerías troncales como Backbone.js \citep{ind:backbone}, en el 2010, la cual esta desarrollada íntegramente en JavaScript y ofrece directamente al desarrollador abstracciones para modelos, vistas y controladores desde el lado del cliente, asumiendo del lado del servidor, una API REST. Una librería de este estilo, con un conjunto de dependencias mínimo colaboro directamente con el desarrollo de aplicaciones web ricas, con gran parte de lógica del lado del cliente, capaces de manejar y disparar \emph{in-situ} eventos generados por la misma aplicación o por algún \emph{third-party}. 
 

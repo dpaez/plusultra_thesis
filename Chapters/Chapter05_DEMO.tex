@@ -168,6 +168,40 @@ De esta forma es posible crear un nuevo driver para conectar un nuevo dispositiv
 
 Esto permite pensar en la posibilidad de contar con un catalogo de drivers de la plataforma.
 
+\section{Componentes en Acción}
+La aplicación Shapes es una prueba de concepto que busca poner en evidencia una interacción multimodal en el navegador. Sumado a esto, la plataforma posibilita la colaboración en tiempo real entre pares. Por lo tanto, es posible contar con mas de un usuario al mismo tiempo y generar entre los usuarios la interacción multimodal. Más aun y debido a la naturaleza distribuida del entorno, la plataforma propaga la señal generada en un evento multimodal de fisión que podrá ser  percibido por todos los clientes (no solo aquellos involucrados en la generación del evento). Esta señal de fisión será recibida en los clientes, los cuales representan un conjunto de hardware heterogéneo, implicando distintas capacidades de afectar al usuario; en el ejemplo aquí presentado, si el usuario esta utilizando la aplicación desde un dispositivo móvil podrá recibir una vibración particular como resultado de una acción multimodal. 
+
+En el siguiente gráfico \ref{fig:demo_show_shapes} se sintetiza el flujo de comunicación habitual de una aplicación web multimodal.
+
+\marginpar{
+Referencias: 
+
+\begin{itemize}
+
+\item \textit{Triangulo}: representa a un dispositivo de modalidad.
+
+\end{itemize}}
+
+% FIGURA Flujo de comunicación
+\begin{center}
+  \begin{figure}[h]
+    \includegraphics[scale=0.7]{gfx/example_showcase}
+    \caption{Flujo de comunicación.}
+    \label{fig:demo_show_shapes}
+  \end{figure}
+\end{center}
+
+Flujo:
+\begin{itemize}
+
+\item 1) Parte de un acción multimodal. Distintos clientes están disparando las partes que conforman a una interacción soportada en la aplicación, esto es por ejemplo, depositar una pieza en el lugar correspondiente sumado a seleccionar y mantener la selección de la pieza sobre el contenedor. Esto ocurre localmente y será distribuido por la plataforma.
+
+\item 2) Se realiza la distribución de eventos generados en 1. Esto puede disparar en algunos clientes la interacción multimodal, mas específicamente, una fusión y luego una fisión. Estos eventos son tratados de forma independiente y son propagados por la plataforma. 
+
+\item 3) Si el proceso de fusión genera una fisión, la misma es propagada, esto puede desencadenar alguna acción en la modalidad conectada al cliente.
+
+\end{itemize}
+
 \section{Resumen del Capítulo}
 El principal objetivo de la plataforma \emph{Plusultra} es agrandar de manera uniforme el conjunto de modalidades que soportan actualmente las aplicaciones web. Este conjunto  es muy limitado, concentrado en las principales formas de comunicación con el ordenador, como lo son el mouse, el teclado y el feedback visual. En muy pocos casos una aplicación web va mas allá de eso y la principal razón puede estar ubicada en las dificultades propias de la tarea junto a la falta de información al respecto. Yendo un poco mas allá, imaginar el soporte a mas de una modalidad al mismo tiempo, parece difícil de visualizar y por ende de llevar a cabo.
 
